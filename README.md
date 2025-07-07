@@ -1,8 +1,30 @@
 
 # CHALLENGE BACKEND NODE TYPESCRIPT
 
-Este proyecto es un backend hecho con **NestJS**, **TypeScript**, **GraphQL**, **MongoDB** y está estructurado con el patrón **Arquitectura Hexagonal**.
+Este proyecto es un backend hecho con **NestJS**, **TypeScript**, **GraphQL**, **MongoDB** , **Docker** y está estructurado con el patrón **Arquitectura Hexagonal**.
 
+## Docker
+
+Descargar la imagen de MongoDB con Docker Compose
+
+```bash
+    docker-compose up -d
+```
+
+Comando para detener el container
+
+```bash
+    docker stop db_reto
+```
+
+Comando para arrancar el container
+
+```bash
+    docker start db_reto
+```
+
+
+<br>
 
 ## Run Locally
 
@@ -32,7 +54,7 @@ Start the server
 ```
 <br>
 
-POR DEFECTO SE QUEDARA LEVANTADO EN EL PUERTO CONFIGURADO (http://localhost:3000/graphql)
+POR DEFECTO EL SERVIDOR SE QUEDARA LEVANTADO EN EL PUERTO CONFIGURADO (http://localhost:3000/graphql)
 
 <br>
 
