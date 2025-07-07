@@ -1,10 +1,9 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, isValidObjectId } from 'mongoose';
 import { ProductRepository } from 'src/products/domain/repository/products.repository';
 import { Products } from 'src/products/domain/entity/products.entity';
 import { Account } from 'src/accounts/domain/entity/accounts.entity';
-import { IProducts } from 'src/products/domain/interface/products.interface';
 
 @Injectable()
 export class ProductsRepositoryImpl implements ProductRepository {

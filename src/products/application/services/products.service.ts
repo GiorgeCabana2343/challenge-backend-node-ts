@@ -10,8 +10,8 @@ export class ProductsService {
     private readonly productRepository: ProductRepository,
   ) { }
 
-  async createProducts(product: IProducts): Promise<Products> {
-    return await this.productRepository.create(product);
+  async createProducts(body: IProducts): Promise<Products> {
+    return await this.productRepository.create(body);
   }
 
   async findById(id: string): Promise<Products | null> {

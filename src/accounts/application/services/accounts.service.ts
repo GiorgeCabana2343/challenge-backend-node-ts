@@ -12,18 +12,18 @@ export class AccountsService {
 
   async createAccount(body: IAccounts): Promise<Account> {
     if (!body.name || !body.name.trim()) {
-      throw new BadRequestException('Name es requerido');
+      throw new BadRequestException('Name is required');
     }
     if (!body.email || !body.email.trim()) {
-      throw new BadRequestException('Email es requerido.');
+      throw new BadRequestException('Email is required.');
     }
     const name = await this.accountRepository.findByName(body.name);
     if (name.length > 0) {
-      throw new BadRequestException('Name ya fue usado');
+      throw new BadRequestException('Name is already used');
     }
     const email = await this.accountRepository.findByEmail(body.email);
     if (email) {
-      throw new BadRequestException('Email ya fue usado');
+      throw new BadRequestException('Email is already used');
     }
 
     return await this.accountRepository.create(body);
