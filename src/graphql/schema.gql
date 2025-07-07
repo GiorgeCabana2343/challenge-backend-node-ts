@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AccountsType {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type ProductsType {
+  id: ID!
+  name: String!
+  sku: String!
+  stock: Int!
+  accountId: String!
+}
+
+type Query {
+  accountsById(id: String!): AccountsType!
+  accountsByName(name: String!): [AccountsType!]!
+  productsById(id: String!): ProductsType!
+  productsByAccount(accountId: String!): [ProductsType!]!
+}
+
+type Mutation {
+  createAccounts(body: AccountsInput!): AccountsType!
+  createProducts(body: ProductsInput!): ProductsType!
+  purchaseProduct(accountId: String!, productId: String!, quantity: Float!): String!
+}
+
+input AccountsInput {
+  name: String!
+  email: String!
+}
+
+input ProductsInput {
+  name: String!
+  sku: String!
+  stock: Float!
+  accountId: String!
+}
